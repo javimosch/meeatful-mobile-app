@@ -9,6 +9,18 @@ angular.module('app_routes', [])
             controller: 'AppCtrl'
         })
 
+        .state('init', {
+            url: '/init',
+            templateUrl: 'templates/init.html',
+            controller: 'initCtrl'
+        })
+
+        .state('login', {
+            url: '/login',
+            templateUrl: 'templates/login.html',
+            controller: 'loginCtrl'
+        })
+
         .state('app.search', {
             url: '/search',
             views: {
@@ -17,6 +29,8 @@ angular.module('app_routes', [])
                 }
             }
         })
+
+
 
         .state('app.browse', {
                 url: '/browse',
@@ -47,5 +61,5 @@ angular.module('app_routes', [])
         });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/playlists');
+        $urlRouterProvider.otherwise('/init');
     });
