@@ -3,6 +3,13 @@ import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 
+import {provideCloud, CloudSettings} from '@ionic/cloud-angular';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'c8c99428'
+  }
+};
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
@@ -22,4 +29,4 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, [provideCloud(cloudSettings)]);
