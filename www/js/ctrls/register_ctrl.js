@@ -15,7 +15,7 @@ angular.module('app_register_ctrl', [])
                 // `$ionicUser` is now registered
                 console.log('register!');
             }, function(err) {
-                for (var e of err.details) {
+                for (var e in err.details) {
                     if (e === 'conflict_email') {
                         $scope.doAlert('Email already exists.');
                     }

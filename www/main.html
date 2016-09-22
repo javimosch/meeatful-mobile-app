@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Meeatful</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * data: 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/ionic.app.css" rel="stylesheet">
+  <script src="https://weinre-vm-javoche.c9users.io/target/target-script-min.js#anonymous"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!--polyfill promises-->
+  <script src="lib/bluebird.min.js"></script>
+  <script src="lib/ionic.cloud.min.js"></script>
+  <!-- add more libraries -->
+  <script src="lib/ngStorage.min.js"></script>
+  <!-- app main -->
+  <script src="js/app.js"></script>
+  <script src="js/routes.js"></script>
+  <!-- app ctrls -->
+  <script src="js/ctrls/init_ctrl.js"></script>
+  <script src="js/ctrls/login_ctrl.js"></script>
+  <script src="js/ctrls/register_ctrl.js"></script>
+  <script src="js/ctrls/dashboard_ctrl.js"></script>
+  <script src="js/ctrls/profile_ctrl.js"></script>
+  <!-- app srv -->
+  <script src="js/srvs/storage_service.js"></script>
+  <script src="js/srvs/data_service.js"></script>
+  <script src="js/controllers.js"></script>
+
+  <script>
+    function deviceReady(isBrowser) {
+      console.log('Device is ready! (FIRST CALL)');
+      console.log('isBrowser? ' + isBrowser);
+      console.log('Initializing angular in 5 seconds');
+
+      window.starter = function() {
+        window.angular.bootstrap(document, ['starter']);
+      };
+
+      setTimeout(function() {
+        console.log('Device is ready! (CONFIRM)');
+        console.log('isBrowser? ' + isBrowser);
+        console.log('Initializing angular with starter() . . .');
+        window.starter();
+        console.log('Done!');
+      }, 5000);
+      //window.plugins.googleplus.trySilentLogin(...);
+    }
+    if (window.location.href.indexOf('c9users') != -1) deviceReady(true);
+    else document.addEventListener('deviceready', deviceReady, false);
+  </script>
+
+</head>
+
+<body>
+  <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

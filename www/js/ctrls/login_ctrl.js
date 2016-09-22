@@ -63,17 +63,17 @@ angular.module('app_login_ctrl', [])
 
             window.plugins.googleplus.disconnect();
             window.plugins.googleplus.login({
-                    'webClientId': '647614489772-g15qma7vudjfnpneghqvg6s8sbmgp9mi.apps.googleusercontent.com',
+                    'webClientId': '647614489772-5ssac9g275in82bia7nvnqta8ur7s3di.apps.googleusercontent.com',
                     'offline': true
                 },
                 function(data) {
-                    console.log('FB LOGIN OK');
-                    console.log(data);
+                    console.log('GOOGLE LOGIN OK');
+                    console.log(JSON.stringify(data));
                     alert('OK!');
                 },
                 function(error) {
-                    console.log('FB LOGIN ERROR');
-                    console.log(error);
+                    console.log('GOOGLE LOGIN ERROR');
+                    console.log(JSON.stringify(error));
                     alert('ERROR!');
                 }
             );

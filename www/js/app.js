@@ -17,11 +17,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'app_routes',
 ])
 
 .config(function($ionicCloudProvider) {
+  /*
   $ionicCloudProvider.init({
     "core": {
       "app_id": "c8c99428"
     }
   });
+  */
 })
 
 .run(function($ionicPlatform) {
