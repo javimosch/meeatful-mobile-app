@@ -1,0 +1,27 @@
+<ion-view view-title="My Profile">
+    <ion-content class="padding">
+
+        <p>Hello {{user.details.email}}</p>
+
+        <form class="">
+            <div class="list">
+                <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="text" ng-disabled='true'  ng-value="user.details.email">
+        </label>
+
+                <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="user.details.username">
+        </label>
+
+                <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="user.details.password">
+        </label>
+            </div>
+        </form>
+
+        <button class="padding button button-block button-light" ng-click="doSave()">Save</button>
+    </ion-content>
+</ion-view>

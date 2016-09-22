@@ -8,9 +8,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'app_routes',
 'ionic.cloud',
 'ngStorage',
 'app_storage_service',
+'app_data_service',
 'app_init_ctrl',
 'app_register_ctrl',
-'app_login_ctrl'
+'app_login_ctrl',
+'app_profile_ctrl',
+'app_dashboard_ctrl'
 ])
 
 .config(function($ionicCloudProvider) {
@@ -35,4 +38,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'app_routes',
       StatusBar.styleDefault();
     }
   });
+})
+
+
+.run(function($rootScope,$ionicAuth) {
+  $rootScope.action  = {
+    logout:function(){
+      $ionicAuth.logout();
+      window.location.href="/#/login";
+    }
+  }
 })

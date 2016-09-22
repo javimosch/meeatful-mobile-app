@@ -1,22 +1,39 @@
 angular.module('app_register_ctrl', [])
-    .controller('registerCtrl', function($scope, $ionicModal, $timeout, $ionicPlatform, $storage, $ionicAuth, $ionicUser) {
+    .controller('registerCtrl', function($scope, $ionicModal, $timeout, $ionicPlatform, $storage, $ionicAuth, $ionicUser, $ionicPopup) {
 
+        $scope.data = {
+            email: '',
+            password: ''
+        };
 
-        $scope.register = function() {
-            $ionicAuth.signup($storage.auth).then(function() {
+        $scope.doRegister = function() {
+
+            if (!$scope.data.email) return $scope.doAlert('Email required');
+            if (!$scope.data.password) return $scope.doAlert('Password required');
+
+            $ionicAuth.signup($scope.data).then(function() {
                 // `$ionicUser` is now registered
                 console.log('register!');
             }, function(err) {
                 for (var e of err.details) {
                     if (e === 'conflict_email') {
-                        alert('Email already exists.');
+                        $scope.doAlert('Email already exists.');
                     }
                     else {
-                        console.log(e)
+                        $scope.doAlert(e);
                     }
                 }
             });
         }
+
+        $scope.doAlert = function(template) {
+            var alertPopup = $ionicPopup.alert({
+                //title: "Hey",
+                template: '<p class="text-center">' + template + '</p>',
+                okText: "Ok",
+                okType: "button-balanced"
+            });
+        };
 
 
     });

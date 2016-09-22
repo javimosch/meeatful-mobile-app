@@ -1,24 +1,28 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
+<ion-header-bar class="bar-energized">
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+        <h1 class="title">MeetFood</h1>
     </div>
-  </ion-header-bar>
-  <ion-content>
-    <form>
-      <div class="list">
-        <label class="item item-input">
+</ion-header-bar>
+
+<div class="bar bar-subheader">
+  <h2 class="title">Login</h2>
+</div>
+
+<ion-content class="padding has-subheader">
+  <form>
+    <div class="list">
+      <label class="item item-input">
           <span class="input-label">Email</span>
           <input type="text" ng-model="auth.email">
         </label>
-        <label class="item item-input">
+      <label class="item item-input">
           <span class="input-label">Password</span>
           <input type="password" ng-model="auth.password">
         </label>
-      </div>
-    </form>
-    <button class="padding button button-block button-positive" ng-click="doLogin()">Sign In</button>
-    <button class="padding button button-block button-positive" type="doLoginFacebook()">Sign In using Facebook</button>
-  </ion-content>
-</ion-modal-view>
+    </div>
+  </form>
+  <button class="padding button button-block button-positive" ng-click="doLogin()">Sign In</button>
+  <button class="padding button button-block button-positive" ng-click="doLoginFacebook()">Sign In using Facebook</button>
+  <button class="padding button button-block button-positive" ng-click="doLoginGoogle()">Sign In using Google</button>
+  <button class="padding button button-block button-calm" ng-click="$state.go('register')">Register</button>
+</ion-content>

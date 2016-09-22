@@ -21,6 +21,12 @@ angular.module('app_routes', [])
             controller: 'loginCtrl'
         })
 
+        .state('register', {
+            url: '/register',
+            templateUrl: 'templates/register.html',
+            controller: 'registerCtrl'
+        })
+
         .state('app.search', {
             url: '/search',
             views: {
@@ -31,6 +37,25 @@ angular.module('app_routes', [])
         })
 
 
+        .state('app.dashboard', {
+            url: '/dashboard',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/dashboard.html',
+                    controller: 'dashboardCtrl'
+                }
+            }
+        })
+        
+        .state('app.profile', {
+            url: '/profile',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/profile.html',
+                    controller: 'profileCtrl'
+                }
+            }
+        })
 
         .state('app.browse', {
                 url: '/browse',

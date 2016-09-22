@@ -1,0 +1,27 @@
+<ion-header-bar class="bar-energized">
+    <div class="buttons">
+        <h1 class="title">MeetFood</h1>
+    </div>
+</ion-header-bar>
+
+<div class="bar bar-subheader">
+    <h2 class="title">Register</h2>
+</div>
+
+
+<ion-content class="padding has-subheader">
+    <form class="">
+        <div class="list">
+            <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="text" ng-model="data.email">
+        </label>
+            <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="data.password">
+        </label>
+        </div>
+    </form>
+    <button class="padding button button-block button-balanced" ng-click="doRegister()">Sign Up</button>
+    <button class="padding button button-block button-light" ui-sref="login">Back</button>
+</ion-content>
